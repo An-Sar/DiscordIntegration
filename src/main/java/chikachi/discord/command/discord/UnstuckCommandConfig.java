@@ -74,7 +74,7 @@ public class UnstuckCommandConfig extends CommandConfig {
                 playerList.transferPlayerToDimension(playerEntity, 0, new DiscordTeleporter(overworld));
 
                 if (fromDimId == 1 && playerEntity.isEntityAlive()) {
-                    overworld.spawnEntityInWorld(playerEntity);
+                    overworld.spawnEntity(playerEntity);
                     overworld.updateEntityWithOptionalForce(playerEntity, false);
                 }
             }
@@ -89,8 +89,10 @@ public class UnstuckCommandConfig extends CommandConfig {
                 return;
             }
 
-            DiscordFakePlayer fakePlayer = new DiscordFakePlayer(minecraftServer.worldServers[0], playerProfile);
-            IPlayerFileData saveHandler = minecraftServer.worldServers[0].getSaveHandler().getPlayerNBTManager();
+            //DiscordFakePlayer fakePlayer = new DiscordFakePlayer(minecraftServer.worldServers[0], playerProfile);
+            DiscordFakePlayer fakePlayer = new DiscordFakePlayer(minecraftServer.worldServerForDimension(0), playerProfile);
+            //IPlayerFileData saveHandler = minecraftServer.worldServers[0].getSaveHandler().getPlayerNBTManager();
+            IPlayerFileData saveHandler = minecraftServer.worldServerForDimension(0).getSaveHandler().getPlayerNBTManager();
             NBTTagCompound playerData = saveHandler.readPlayerData(fakePlayer);
 
             if (playerData == null) {

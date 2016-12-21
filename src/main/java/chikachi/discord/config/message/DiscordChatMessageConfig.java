@@ -115,7 +115,7 @@ public class DiscordChatMessageConfig extends BaseMessageConfig {
         }
 
         TextChannel channel = event.getTextChannel();
-        List<EntityPlayerMP> players = minecraftServer.getPlayerList().getPlayerList();
+        List<EntityPlayerMP> players = minecraftServer.getPlayerList().getPlayers();
         if (players.size() == 0) {
             return;
         }
@@ -200,11 +200,11 @@ public class DiscordChatMessageConfig extends BaseMessageConfig {
                         playerChatComponent.appendSibling(this.attachmentToTextComponent(attachment));
                     }
 
-                    player.addChatMessage(playerChatComponent);
+                    player.sendMessage(playerChatComponent);
                     continue;
                 }
 
-                player.addChatMessage(chatComponent);
+                player.sendMessage(chatComponent);
             }
         } else {
             String pattern = this.message;
@@ -225,7 +225,7 @@ public class DiscordChatMessageConfig extends BaseMessageConfig {
             }
 
             for (EntityPlayerMP player : players) {
-                player.addChatMessage(message);
+                player.sendMessage(message);
             }
         }
     }

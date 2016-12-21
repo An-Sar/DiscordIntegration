@@ -35,7 +35,7 @@ public class OnlineCommandConfig extends CommandConfig {
     public void execute(MinecraftServer minecraftServer, User user, List<String> args) {
         List<String> playerNames = new ArrayList<>();
 
-        List<EntityPlayerMP> players = minecraftServer.getPlayerList().getPlayerList();
+        List<EntityPlayerMP> players = minecraftServer.getPlayerList().getPlayers();
 
         for (EntityPlayerMP player : players) {
             String playerName = player.getDisplayNameString();

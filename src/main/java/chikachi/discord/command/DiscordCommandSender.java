@@ -55,12 +55,12 @@ public class DiscordCommandSender implements ICommandSender {
     }
 
     @Override
-    public void addChatMessage(ITextComponent component) {
+    public void sendMessage(ITextComponent component) {
         DiscordClient.getInstance().sendMessage(component.getUnformattedText());
     }
 
     @Override
-    public boolean canCommandSenderUseCommand(int permLevel, String commandName) {
+    public boolean canUseCommand(int permLevel, String commandName) {
         return true;
     }
 
@@ -76,7 +76,7 @@ public class DiscordCommandSender implements ICommandSender {
 
     @Override
     public World getEntityWorld() {
-        return this.minecraftServer.worldServers[0];
+        return this.minecraftServer.worldServerForDimension(0);
     }
 
     @Nullable

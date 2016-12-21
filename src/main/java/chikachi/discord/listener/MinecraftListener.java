@@ -35,7 +35,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 public class MinecraftListener {
     @SubscribeEvent
     public void onCommand(CommandEvent event) {
-        String commandName = event.getCommand().getCommandName();
+        String commandName = event.getCommand().getName();
 
         if (commandName.equalsIgnoreCase("say")) {
             MinecraftChatMessageConfig messageConfig = Configuration.getDiscordChat();

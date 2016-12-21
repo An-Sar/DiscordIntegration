@@ -34,7 +34,7 @@ public class DiscordFakePlayer extends FakePlayer {
     }
 
     DiscordFakePlayer(MinecraftServer minecraftServer, User user) {
-        this(minecraftServer.worldServers[0], new GameProfile(UUID.randomUUID(), "@" + user.getUsername()));
+        this(minecraftServer.worldServerForDimension(0), new GameProfile(UUID.randomUUID(), "@" + user.getUsername()));
 
         this.dimension = Integer.MIN_VALUE;
     }

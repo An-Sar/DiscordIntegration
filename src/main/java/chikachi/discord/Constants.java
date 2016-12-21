@@ -18,7 +18,7 @@
 package chikachi.discord;
 
 public class Constants {
-    public static final String MODID = "DiscordIntegration";
-    public static final String MODNAME = "DiscordIntegration";
+    public static final String MODID = "discordintegration";
+    public static final String MODNAME = "discordintegration";
     public static final String VERSION = "2.1.0";
 }

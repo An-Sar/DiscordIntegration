@@ -41,7 +41,7 @@ class DiscordFakeNetServerHandler extends NetHandlerPlayServer {
     }
 
     @Override
-    public void kickPlayerFromServer(String reason) {
+    public void disconnect(String reason) {
 
     }
 
@@ -60,7 +60,7 @@ class DiscordFakeNetServerHandler extends NetHandlerPlayServer {
     }
 
     @Override
-    public void processPlayerBlockPlacement(CPacketPlayerTryUseItem packet) {
+    public void processTryUseItemOnBlock(CPacketPlayerTryUseItemOnBlock packet) {
 
     }
 

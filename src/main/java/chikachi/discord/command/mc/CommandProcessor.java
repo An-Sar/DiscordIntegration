@@ -30,7 +30,7 @@ class CommandProcessor {
                     boolean shouldTryConnect = Configuration.getToken().length() == 0;
 
                     Configuration.load();
-                    sender.addChatMessage(new TextComponentString("Config reloaded"));
+                    sender.sendMessage(new TextComponentString("Config reloaded"));
 
                     if (shouldTryConnect && Configuration.getToken().length() > 0) {
                         DiscordClient.getInstance().connect(sender.getServer());
@@ -38,11 +38,11 @@ class CommandProcessor {
                     return;
                 case "save":
                     Configuration.save();
-                    sender.addChatMessage(new TextComponentString("Config saved"));
+                    sender.sendMessage(new TextComponentString("Config saved"));
                     return;
             }
         }
 
-        sender.addChatMessage(new TextComponentString("Unknown command - Available commands: reload, save"));
+        sender.sendMessage(new TextComponentString("Unknown command - Available commands: reload, save"));
     }
 }

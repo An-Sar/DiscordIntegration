@@ -27,9 +27,9 @@ repositories {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-def mcVersion = '1.10.2'
-def forgeVersion = '12.18.1.2011'
-def modVersion = '2.1.0'
+def mcVersion = '1.11'
+def forgeVersion = '13.19.1.2189'
+def modVersion = '3.1.0'
 
 version = 'mc' + mcVersion + '-' + modVersion
 group = "chikachi.discord"
@@ -47,7 +47,7 @@ minecraft {
         runDir = 'run'
     }
 
-    mappings = "snapshot_20160729"
+    mappings = "snapshot_20161130"
 }
 
 def printDebug(message) {

@@ -29,12 +29,12 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 public class NonLibCommandHandler extends CommandBase {
     @Override
-    public String getCommandName() {
+    public String getName() {
         return "discord";
     }
 
     @Override
-    public String getCommandUsage(ICommandSender sender) {
+    public String getUsage(ICommandSender sender) {
         return "/discord [reload]";
     }
 
